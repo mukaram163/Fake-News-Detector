@@ -9,8 +9,13 @@ jobs:
     - name: Checkout Repository and LFS Files
       uses: actions/checkout@v4
       with:
-        # Crucial for downloading the model.keras binary
+        # Crucial for reading the LFS pointers
         lfs: true
+
+    - name: Force LFS Download of Model Binary
+      run: |
+        # Explicitly forces the download of the model binary, fixing the 'file signature not found' error.
+        git lfs pull
 
     - name: Set up Python 3.10
       uses: actions/setup-python@v5
