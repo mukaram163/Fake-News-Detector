@@ -1,6 +1,6 @@
-ame: Python CI Pipeline
+name: Python CI Pipeline
 
-on: [push, pull_request] # Simplified trigger syntax to avoid indentation issues
+on: [push, pull_request]
 
 jobs:
 build-and-test:
